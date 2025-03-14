@@ -11,15 +11,23 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: <Color>[Color(0xFF00457D), Color(0xFF05051F)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+      child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
           spacing: 30.0,
           children: [
             SizedBox(height: 30),
-            Icon(Icons.lock, size: 45.0),
-            FlutterLogo(size: 90.0),
-            Text('Boas-vindas!'),
+            Image.asset("assets/Logo.png", width: 100),
+            Image.asset("assets/Ilustra1 1.png", height: 150),
+            Text('Boas-vindas!', style: TextStyle(color: Colors.white)),
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
@@ -36,6 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+      )
     );
   }
 }
